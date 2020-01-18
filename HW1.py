@@ -11,7 +11,7 @@ def gprime(x):
 
 def bisection(x, a, b, tol):
     num_iterations = 0
-    max_iterations = 1000
+    max_iterations = 100
     a0 = a
     b0 = b
     
@@ -44,9 +44,19 @@ def bisection(x, a, b, tol):
         print("Number of iterations: " + str(num_iterations))
         print("Final solution: " + str(x))
         
+        # plotting
+        x_vals = np.linspace(a0, b0, 1000)
+        plt.figure()
+        plt.plot(x_vals, g(x_vals), 'k')
+        plt.xlabel('x')
+        plt.ylabel('g(x)')
+        plt.suptitle('Figure 2.1')
+        plt.title('The graph of g(x) shown with its approximate maximum, x* = ' + str(x))
+        plt.show()
+        
+        
         
 
-
-        
+    
 tol = 0.00000000001
 bisection(3, 1, 5, tol)
