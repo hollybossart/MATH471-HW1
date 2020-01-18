@@ -44,15 +44,17 @@ def bisection(x, a, b, tol):
         print("Number of iterations: " + str(num_iterations))
         print("Final solution: " + str(x))
         
-        # plotting
+        # plotting the first figure
         x_vals = np.linspace(a0, b0, 1000)
         plt.figure()
         plt.plot(x_vals, g(x_vals), 'k')
+        plt.axvline(x, color = 'r', linestyle = '--')
+        plt.plot(x, g(x), 'ro')
         plt.xlabel('x')
         plt.ylabel('g(x)')
         plt.suptitle('Figure 2.1')
-        plt.title('The graph of g(x) shown with its approximate maximum, x* = ' + str(x))
-        plt.show()
+        plt.title('The graph of g(x) shown with its approximate maximum, x* = ' + str(x) + '.', fontsize = 'small')
+        
         
         
         
