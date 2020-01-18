@@ -50,11 +50,22 @@ def bisection(x, a, b, tol):
         plt.plot(x_vals, g(x_vals), 'k')
         plt.axvline(x, color = 'r', linestyle = '--')
         plt.plot(x, g(x), 'ro')
+        plt.annotate('x*', (x-0.2, g(x)-0.02))
         plt.xlabel('x')
         plt.ylabel('g(x)')
         plt.suptitle('Figure 2.1')
         plt.title('The graph of g(x) shown with its approximate maximum, x* = ' + str(x) + '.', fontsize = 'small')
         
+        # plotting the second figure
+        plt.figure()
+        plt.plot(x_vals, gprime(x_vals), 'k')
+        plt.axhline(0, color = 'b', linestyle = '--')
+        plt.plot(x, gprime(x), 'bo')
+        plt.annotate('x*', (x+0.05, gprime(x)+0.02))
+        plt.xlabel('x')
+        plt.ylabel('g\'(x)')
+        plt.suptitle('Figure 2.2')
+        plt.title('The graph of g\'(x) with its approximate root, x* = ' + str(x) + '.', fontsize = 'small')
         
         
         
